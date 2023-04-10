@@ -1,0 +1,340 @@
+/*GLOBAL RULE*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Questrial","Montserrat", sans-serif;
+    background-color:#fdfdfd;
+}
+ul {
+    list-style: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* SMALL */
+@media (min-width: 768px) {
+    .container {
+        width: 758px;
+    }
+}
+
+/* MEDIUM */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* LARGE */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/*END GLOBAL RULES*/
+
+/* START VARIABLES */
+:root {
+    --main-color: #ff5774;
+    --secondary-color: #a5b5bd;
+    --main-padding: 60px;
+}
+/* END VARIABLES */
+
+/* START HEADER */
+header {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 80px;
+}
+
+header .logo img {
+    height: 40px;
+}
+
+header nav {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    /* position: relative; */
+}
+
+header nav .toggle {
+    color: var(--secondary-color);
+    margin-right: 30px;
+}
+
+@media (min-width: 768px){
+    header nav .toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 767px){
+    header nav ul.links {
+        display: none;
+    }
+    header nav .toggle:hover + ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+
+    }
+}
+
+header nav ul {
+    display: flex;
+}
+header nav ul .all {
+    background-color: var(--main-color);
+    color: white;
+}
+header nav ul li a{
+    display: block;
+    text-decoration: none;
+    padding: 5px 25px;
+    font-size: 14px;
+    color: var(--secondary-color) ;
+}
+
+header nav ul li a:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+header nav i {
+    color: var(--main-color);
+    margin-left: 10px;
+}
+/* END HEADER */
+
+/* START LANDING */
+.landing {
+    background-color: var(--main-color);
+    background-image: url(/mona/web/projects/Sneak/images/b-L501l2_w5jo-unsplash.jpg);
+    background-size: cover;
+    height: calc(100vh - 0px);
+    position: relative;
+}
+
+.landing .overlay {
+    position: absolute;
+    background-color:#ff577482;
+    width: 100%;
+    height: 100%;
+}
+
+.landing .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.landing .content h2{
+    font-size: 32px;
+    color: white;
+    letter-spacing: 7px;
+    margin-bottom: 30px;
+}
+
+.landing .content p{
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 40px;
+}
+
+.landing .content button{
+    background-color: #eee;
+    padding: 10px 30px;
+    border: none;
+    color: var(--main-color);
+
+}
+/* END LANDING */
+
+/* start icons  */
+.container .icons {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    text-align: center;
+}
+
+.container .icons i {
+    margin-right: 30px;
+    color: var(--main-color);
+}
+/* end icons  */
+/* start nav  */
+.container nav.main {
+    padding-bottom: var(--main-padding);
+}
+.container nav.main ul {
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 767px){
+    .container nav.main ul.links {
+        display: none;
+    }
+}
+.container nav.main ul li{
+    margin-left: 10px;
+}
+
+.container nav.main ul li a{
+    text-decoration: none;
+    padding: 10px 35px;
+    color: var(--secondary-color);
+    font-size: 14px;
+}
+.container nav.main ul li a.all {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.container .main ul li a:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+/* end nav  */
+
+/* start images */
+.images .container {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.images .container div{
+    margin: 20px 20px;
+    width: 250px;
+    height: 350px;
+}
+.images .container div img {
+    width: 100%;
+    height: 100%;
+}
+/* end images  */
+
+/* .container .parent {
+    display: grid;
+    grid-template-columns: repeat(auto, minmax(200px, 1fr));
+    height: 100vh;
+    column-gap: 10px;
+    row-gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+@media (max-width: 767px){
+    .container .parent {
+        grid-template-columns: 1;
+    }
+}
+
+.container .parent div {
+    background-color: #ddd;
+}
+.container .parent div.one {
+    grid-row: 1 /  2 ;
+    background-image: url(../images/one.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container .parent div.four {
+    grid-row: 2 / 5 ;
+    background-image: url(../images/four.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container .parent div.seven {
+    grid-row: 5 /  7 ;
+    background-image: url(../images/seven.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.container .parent div.two {
+    grid-row: 1 / 2 ;
+    background-image: url(../images/two.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container .parent div.five {
+    grid-row: 2 / 4 ;
+    background-image: url(../images/five.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container .parent div.nine {
+    grid-row: 4 / 7 ;
+    background-image: url(../images/nine.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container .parent div.three {
+    grid-row: 1 / 3 ;
+    background-image: url(../images/three.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+} 
+.container .parent div.eight {
+    grid-row: 4 / 6 ;
+    background-image: url(../images/eight.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+ */
+
+/* start footer  */
+.container .btn {
+    text-align: center;
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.container .btn button {
+    background-color: var(--main-color);
+    border: none;
+    color: var(--secondary-color);
+    padding: 10px 30px;
+}
+.container div.copy {
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+.container div.copy span {
+    color: var(--main-color);
+}
+/* end footer  */
